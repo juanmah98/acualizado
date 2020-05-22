@@ -1,187 +1,25 @@
 <html>
-
-<head>
-
-    <link rel="stylesheet" href="Css/estilo.css">
-    <link rel="stylesheet" href="Css/Categorias.css">
-    <link rel="stylesheet" href="Oculta.js">
-    <title> Comprobante </title>
-    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
-    <script>
-        $('#boton').click(function(){
-            $("#contenido").load("siguiente.html");
-        })
-    </script>
-</head>
-
-<body>
-    
-    <header>
-        <div class="cont">
-            <h2 class="titulo">Compra - Venta</h2>
-        <nav>
-            <a href="#" class="activo">Inicio</a>
-            <a href="#">Nuevo</a>
-            <a href="#">informacion</a>
-            <a href="#">Contaco</a>
-        </nav>
-    </div>
-    </header>
-
-    <main>
-
-        <div class="crear">
-            <div class="cont">
-                
-                <h3>Nuevo Formulario</h3>
-                <div class="nuevo">
-                    <p class="tit">DATOS DE VENDEDOR</p>
-                    <p class="for">Nombre</p>
-                    <input type="text" size="30" maxlength="45" placeholder="Nombre" name="nombre">
-                    <p class="for">Apellido</p>
-                    <input type="text" size="30" maxlength="45" placeholder="Apellido" name="apellido">
-                    <p class="for">Domicilio</p>
-                    <input type="text" size="30" maxlength="45" placeholder="Domicilio" name="domicilio">
-                    <p class="for">Telefono</p>
-                    <input type="text" size="30" maxlength="45" placeholder="Telefono" name="telefono">
-
-                    <p class="tit">DATOS DE COMPRADOR</p>
-                    <p class="for">Nombre</p>
-                    <input type="text" size="30" maxlength="45" placeholder="Nombre" name="nombre2">
-                    <p class="for">Apellido</p>
-                    <input type="text" size="30" maxlength="45" placeholder="Apellido" name="apellido2">
-                    <p class="for">Domicilio</p>
-                    <input type="text" size="30" maxlength="45" placeholder="Domicilio" name="domicilio2">
-                    <p class="for">Telefono</p>
-                    <input type="text" size="30" maxlength="45" placeholder="Telefono" name="telefono2">
-                    <br>
-                    <br>    
-                    <div class="Seleccion">
-                        <h3 class="tit"> Seleccion de operacion </h3>
-                        <br>
-                        <a>Venta: </a><input type="radio" id="rbVenta" onchange="Venta()">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a>Permuta: </a><input type="radio" id="rbCanje" onchange="Canje()">
-                        <br>
-                        <br>
-                        <input type="number" placeholder="$---" name="input Venta" id="bxVenta">
-                        <input type="text" placeholder="Objeto de Permuta" name="input Venta" id="bxCanje">
-                        <br>
-                        <br>
-                        <textarea name="OBSERVACION"  id="bxCanjee" class="txtOtro"   placeholder="OBSERVACION"></textarea>
-                    </div>
-
-                
-                </div>
-           
-            </div>
-        
-            <div class="Formulario">
-            <h4>CATEGORIA DEL ARTICULO</h4>
-            <ul>
-                <li>
-                    <input type="button" class="btn" id="btnElec" value="Electronico" onclick="Recargar()" >
-                    <script src="Oculta.js"></script>
-
-                    <section id="ContenidoElectronico">
-                        <a> Marca:</a>
-                        <input class="bxElec" type="text" size="30" maxlength="45" placeholder="Marca" name="marca">
-                        <br>
-                        <a> Modelo:</a>
-                        <input class="bxElec" type="text" size="30" maxlength="45" placeholder="Modelo" name="modelo"><br>
-                        <a> Color:</a>
-                        <input class="bxElec" type="text" size="30" maxlength="45" placeholder="Color" name="color">
-                        <br>
-                        <a> N° de serie:</a>
-                        <input class="bxElec" type="text" size="30" maxlength="45" placeholder="N° de serie" name="n serie">
-                        <br>
-                        <a> Estado:</a>
-                        <input class="bxElec" type="text" size="30" maxlength="45" placeholder="Estado" name="estado">
-                        <br>
-                        <a> Accesorios:</a>
-                        <br>
-                        <label>Si <input type="radio" id="SI" onchange="accesorioSi()" > </label>
-                        <label>No <input type="radio" id="NO" onchange="accesorioNo()"> </label>
-                        <br>
-                        <input class="bxElec" type="text" size="30" maxlength="45" placeholder="Accesorios" id="accesorio">
-                    </section>
-                </li>
-
-                <li>
-                    <input type="button" class="btn" id="btnBici" value="Bicicleta" onclick="RecargarBic()" >
-                    <script src="Oculta.js"></script>
-
-                    <section id="ContBic">
-                        <a>Tipo de Bicicleta</a>
-                        <input type="text" size="30" maxlength="45" placeholder="Tipo de Bicicleta" name="tipo">
-                        <a>Marca</a>
-                        <input type="text" size="30" maxlength="45" placeholder="Marca" name="marca">
-                        <a>Modelo</a>
-                        <input type="text" size="30" maxlength="45" placeholder="Modelo" name="modelo">
-                        <a>Color</a>
-                        <input type="text" size="30" maxlength="45" placeholder="Color" name="color">
-                        <a>Extras</a>
-                        <input type="text" size="30" maxlength="45" placeholder="Extras" name="extras">
-                        <a>Nº de Cuadro</a>
-                        <input type="text" size="30" maxlength="45" placeholder="Nº de Cuadro" name="cuadro">
-                        <a>Talle del cuadro</a>
-                        <input type="text" size="30" maxlength="45" placeholder="Talle del cuadro" name="Talle cuadro">
-                        <a>Talle de cubierta</a>
-                        <input type="text" size="30" maxlength="45" placeholder="Talle de cubierta" name="Talle cubierta">
-                        <a>Material</a>
-                        <input type="text" size="30" maxlength="45" placeholder="Material" name="material">
-                        <a>Marca y modelo del Cambio</a>
-                        <input type="text" size="30" maxlength="45" placeholder="Marca y modelo del Cambio" name="cambio">
-                        <a>Marca y modelo de Frenos</a>
-                        <input type="text" size="30" maxlength="45" placeholder="Marca y modelo de Frenos" name="frenos">
-                        <a>Marca y modelo Horquilla</a>
-                        <input type="text" size="30" maxlength="45" placeholder="Marca y modelo  Horquilla" name=" Horquilla">
-                        
-                    </section>
-                </li>
-               
-                <li>
-                    <input type="button" class="btn" id="btnInd" value="Indumentaria" onclick="RecargarInd()" >
-                    <script src="Oculta.js"></script>
-
-                    <section id="ContInd">
-                        <a>Tipo de Prenda</a>
-                        <input type="text" size="30" maxlength="45" placeholder="Tipo de prenda" name="tipo">
-                        <a>Marca</a>
-                        <input type="text" size="30" maxlength="45" placeholder="Marca" name="tipo">
-                    </section>
-                </li>
-                <li>
-                    <input type="button" class="btn" id="btnMue" value="Mueble" onclick="RecargarMueble()" >
-                    <script src="Oculta.js"></script>
-
-                    <section id="ContMueble">
-                        <h5>HOla</h5>
-                    </section>
-                </li>
-              
-                <li>
-                    <input type="button" class="btn" id="btnOtro" value="Otro" onclick="RecargarOtro()" >
-                    <script src="Oculta.js"></script>
-
-                    <section id="ContOtro">
-                        <textarea placeholder="Descripción" id="txtOtro"></textarea>
-                    </section>
-                </li>
-
-            </ulv>
-
-            
-
-            </div>
-        
-            <input type="button" class="bt" id="boton" value="Siguiente" onclick="location.herf='siguiente.html'" >
+    <head>
+        <title> Comprobante </title>
+        <link rel="stylesheet" href="Css/indexStyle.css">
+    </head>
+    <body>
+        <div>
+            <br>
+            <h1> AVISO LEGAL!!!</h1>
+            <br>
+            <p>
+                <h3>
+                    Para su propia seguridad, ésta pagina requiere datos personales como nombre y direccion de comprador y vendedor,
+                    al continuar usted acepta que los datos depositados a continuación serán almacenados para seguridad de la/las 
+                    transacciones realizadas y evitar posibles estafas. Los datos aqui proporcionados tienen caracter de declaración jurada (DDJJ),
+                    cualquier falsificación de los mismos tendrá consecuensias legales contra su persona.   
+                </h3>
+                <br><br><br><br>    
+                <input type="checkbox" id="chkContinue" onclick="btnContinue.disabled = !this.checked"> 
+                <label> He leído y acepto los terminos y condiciones.</label>
+                <input type="button" id="btnContinue" value="Continuar" onclick="location.href='Principal.html'" disabled>
+            </p>
         </div>
-    </main>
-
-    <script src="JavaScript/metodos.js"></script>
-    
-
-</body>
-
+    </body>
 </html>

@@ -1,0 +1,22 @@
+
+function descargapdf(){
+    var pdf= new jsPDF('p','pt','a4')
+    pdf.setFont("courier", "time");
+    pdf.setFontSize(11);
+
+    var nom=ape=dom=num="____________"
+    if(document.getElementById("NombreVendedor").value != ""){
+        nom=document.getElementById("NombreVendedor").value
+    }
+    if(document.getElementById("ApellidoVendedor").value != ""){
+        ape=document.getElementById("ApellidoVendedor").value
+    }
+    if(document.getElementById("DomicilioVendedor").value != ""){
+        dom=document.getElementById("DomicilioVendedor").value
+    }
+    if(document.getElementById("TelefonoVendedor").value != ""){
+        num = document.getElementById("TelefonoVendedor").value
+    }
+    pdf.text(40,40,"Quien suscribe " + ape +", "+ nom + ", con domicilio en " + dom + ", Celular N° " + num +" \n")
+    pdf.save('Comprobante Compra-Venta.pdf')
+}
